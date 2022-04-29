@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Pie/Wheel Thing!</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <div class="start__wheel-wrapper">
+    <div class="start__wheel">
+      <div class="wheel__container">
+        <div class="wheel__circle-background" style="background-image: url(./slices/circle-background.svg);"></div>
+
+        <div class="wheel__centerpiece">
+          <img src="./slices/center-understanding.svg" alt="Understanding">
+        </div>
+
+        <div class="wheel__slices">
+          <div data-content-id="phase-1" class="wheel__slice wheel__slice--1 wheel__slice--green --active" title="">
+            <img src="./slices/slice-1.svg" alt="">
+            <img src="./slices/slice-1--active.svg" alt="">
+          </div>
+
+          <div data-content-id="phase-2" class="wheel__slice wheel__slice--2 wheel__slice--yellow" title="">
+            <img src="./slices/slice-2.svg" alt="">
+            <img src="./slices/slice-2--active.svg" alt="">
+          </div>
+
+          <div data-content-id="phase-3" class="wheel__slice wheel__slice--3 wheel__slice--purple" title="">
+            <img src="./slices/slice-3.svg" alt="">
+            <img src="./slices/slice-3--active.svg" alt="">
+          </div>
+
+          <div data-content-id="phase-4" class="wheel__slice wheel__slice--4 wheel__slice--blue" title="">
+            <img src="./slices/slice-4.svg" alt="">
+            <img src="./slices/slice-4--active.svg" alt="">
+          </div>
+
+          <div data-content-id="phase-5" class="wheel__slice wheel__slice--5 wheel__slice--red" title="">
+            <img src="./slices/slice-5.svg" alt="">
+            <img src="./slices/slice-5--active.svg" alt="">
+          </div>
+
+          <div data-content-id="phase-6" class="wheel__slice wheel__slice--6 wheel__slice--green" title="">
+            <img src="./slices/slice-6.svg" alt="">
+            <img src="./slices/slice-6--active.svg" alt="">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTE:
+      - These are invisible on the page and are used to set the `clip-path` on the actual slices.
+      - Original path points from Figma/editor are absolute, which fucks up responsiveness since it
+        doesn't scale to the content being clipped. Converted to relative using a two step process
+        using two different online tools, linked below:
+        1. https://yqnn.github.io/svg-path-editor/
+        2. https://yoksel.github.io/relative-clip-path/
+      - First step is to paste in the path value into the first tool. Then, scale to 0.35 X & Y. Then
+        convert to relative. This is now theoretically correct. Step 2 is for visually checking.
+      - Second step is taking the modified path value from first tool and pasting into second tool's
+        first field. This tool is finicky and I had to experiment with refreshing several times and
+        toggling the 'Remove offset' button to get it to work. Once it cooperates, it will show the
+        original followed by a version with its relative path tweaks. It provides the full <path> element
+        for the SVG along with demo CSS/markup. Grab the <path> or just the path value from the 'All
+        Together Now' section and use it in the final SVG markup. It should now be responsive. There
+        are a couple of slices here that needed further manual positioning tweaks for the clipped
+        images, for reasons unknown to me.
+    -->
+    <div class="slices__clip-paths">
+      <!-- Slice 1 Path -->
+      <svg width="0" height="0">
+        <defs>
+          <clipPath clipPathUnits="objectBoundingBox" id="slice-1-path">
+            <!-- <path d="m0.224,0.014 c0.264,0.033,0.516,0.114,0.729,0.241 a0.143,0.111,90,0,1,0.056,0.081 h0 a0.144,0.112,90,0,1,-0.042,0.086 h0 l-0.712,0.552 c-0.028,0.021,-0.063,0.033,-0.101,0.033 c-0.037,0,-0.073,-0.011,-0.1,-0.031 c-0.029,-0.021,-0.045,-0.05,-0.045,-0.081 v-0.78 c0,-0.059,0.067,-0.108,0.144,-0.108 c0.006,0,0.012,0,0.018,0.001 l0.053,0.006"></path> -->
+            <path d="m0,0.773 l0,-0.773 c0.423,0.004,0.785,0.226,1,0.614 l-0.628,0.386 c-0.077,-0.134,-0.214,-0.224,-0.372,-0.227"></path>
+          </clipPath>
+        </defs>
+      </svg>
+      <!-- Slice 2 Path -->
+      <svg width="0" height="0">
+        <defs>
+          <clipPath clipPathUnits="objectBoundingBox" id="slice-2-path">
+            <!-- <path d="m0.04,0.763 l0.003,0.003 l-0.003,-0.003 c-0.032,0.042,-0.042,0.102,-0.024,0.157 c0.017,0.053,0.055,0.087,0.099,0.089 v0 h0.781 a0.111,0.144,90,0,0,0.084,-0.049 a0.111,0.144,90,0,0,0.027,-0.114 c-0.029,-0.284,-0.115,-0.554,-0.25,-0.781 c-0.021,-0.035,-0.053,-0.056,-0.088,-0.056 a0.111,0.143,90,0,0,-0.079,0.042 l-0.55,0.712"></path> -->
+            <path d="m0,0.314 l0.801,-0.314 c0.266,0.319,0.266,0.681,0,1 l-0.8,-0.314 c0.045,-0.055,0.07,-0.118,0.07,-0.186 c0,-0.067,-0.025,-0.131,-0.07,-0.186"></path>
+          </clipPath>
+        </defs>
+      </svg>
+      <!-- Slice 3 Path -->
+      <svg width="0" height="0">
+        <defs>
+          <clipPath clipPathUnits="objectBoundingBox" id="slice-3-path">
+            <!-- <path d="m0.017,0.096 h0 c-0.017,0.055,-0.008,0.115,0.024,0.157 l0.55,0.712 a0.111,0.143,90,0,0,0.079,0.042 c0.035,0,0.067,-0.02,0.088,-0.056 v0 c0.135,-0.228,0.221,-0.498,0.25,-0.781 a0.111,0.144,90,0,0,-0.027,-0.114 a0.111,0.144,90,0,0,-0.084,-0.049 h-0.777 c-0.046,0,-0.085,0.034,-0.103,0.089"></path> -->
+            <path d="m0.37,0 l0.63,0.386 c-0.215,0.388,-0.577,0.61,-1,0.614 l0,-0.773 c0.157,-0.004,0.294,-0.094,0.37,-0.227"></path>
+          </clipPath>
+        </defs>
+      </svg>
+      <!-- Slice 4 Path -->
+      <svg width="0" height="0">
+        <defs>
+          <clipPath clipPathUnits="objectBoundingBox" id="slice-4-path">
+            <!-- <path d="m0.224,0.999 c0.264,-0.033,0.516,-0.114,0.729,-0.241 a0.143,0.111,90,0,0,0.056,-0.081 h0 a0.144,0.112,90,0,0,-0.042,-0.086 h0 l-0.712,-0.552 c-0.028,-0.021,-0.063,-0.033,-0.101,-0.033 c-0.037,0,-0.073,0.011,-0.1,0.031 c-0.029,0.021,-0.045,0.05,-0.045,0.081 v0.78 c0,0.059,0.067,0.108,0.144,0.108 c0.006,0,0.012,0,0.018,-0.001 l0.053,-0.006"></path> -->
+            <path d="m0.63,0 c0.076,0.134,0.213,0.224,0.37,0.228 l0,0.772 c-0.423,-0.004,-0.785,-0.226,-1,-0.614 l0.63,-0.386"></path>
+          </clipPath>
+        </defs>
+      </svg>
+      <!-- Slice 5 Path -->
+      <svg width="0" height="0">
+        <defs>
+          <clipPath clipPathUnits="objectBoundingBox" id="slice-5-path">
+            <!-- <path d="m0.795,1 c-0.264,-0.033,-0.516,-0.114,-0.729,-0.241 a0.143,0.111,0,0,1,-0.056,-0.081 h0 a0.144,0.112,0,0,1,0.042,-0.086 h0 l0.712,-0.552 c0.028,-0.021,0.063,-0.033,0.101,-0.033 c0.037,0,0.073,0.011,0.1,0.031 c0.029,0.021,0.045,0.05,0.045,0.081 v0.78 c0,0.059,-0.067,0.108,-0.144,0.108 c-0.006,0,-0.012,0,-0.018,-0.001 l-0.053,-0.006"></path> -->
+            <path d="m0.199,1 c-0.265,-0.319,-0.265,-0.681,0.001,-1 l0.801,0.314 c-0.044,0.055,-0.07,0.118,-0.07,0.185 c0,0.067,0.025,0.13,0.069,0.185 l-0.801,0.315"></path>
+          </clipPath>
+        </defs>
+      </svg>
+      <!-- Slice 6 Path -->
+      <svg width="0" height="0">
+        <defs>
+          <clipPath clipPathUnits="objectBoundingBox" id="slice-6-path">
+            <!-- <path d="m0.009,0.17 c0.029,0.284,0.115,0.554,0.25,0.781 c0.021,0.035,0.053,0.056,0.088,0.056 a0.111,0.143,90,0,0,0.079,-0.042 l0.55,-0.712 c0.032,-0.042,0.042,-0.102,0.024,-0.157 c-0.018,-0.055,-0.057,-0.089,-0.103,-0.089 h-0.777 a0.111,0.144,90,0,0,-0.11,0.163"></path> -->
+            <path d="m1,0.772 c-0.157,0.004,-0.294,0.094,-0.37,0.228 l-0.63,-0.387 c0.215,-0.388,0.577,-0.61,1,-0.613 l0,0.772"></path>
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+
+  </div>
+
+  <div class="start__phases-wrapper">
+    <div class="start-phases">
+
+      <div id="phase-1" class="start-phase start-phase--green --active">
+        <h5 class="color--green start-phase__heading">Heading lorem ipsum</h5>
+        <p class="start-phase__copy">Copy lorem ipsum</p>
+        <img class="start-phase__graphic" src="" alt="">
+        <a href="#" class="start-phase__link">
+          Lorem ipsum
+        </a>
+      </div>
+
+      <div id="phase-2" class="start-phase start-phase--yellow">
+        <h5 class="color--yellow start-phase__heading">Heading lorem ipsum</h5>
+        <p class="start-phase__copy">Copy lorem ipsum</p>
+        <img class="start-phase__graphic" src="" alt="">
+        <a href="#" class="start-phase__link">
+          Lorem ipsum
+        </a>
+      </div>
+
+      <div id="phase-3" class="start-phase start-phase--purple">
+        <h5 class="color--purple start-phase__heading">Heading lorem ipsum</h5>
+        <p class="start-phase__copy">Copy lorem ipsum</p>
+        <img class="start-phase__graphic" src="" alt="">
+        <a href="#" class="start-phase__link">
+          Lorem ipsum
+        </a>
+      </div>
+
+      <div id="phase-4" class="start-phase start-phase--blue">
+        <h5 class="color--blue start-phase__heading">Heading lorem ipsum</h5>
+        <p class="start-phase__copy">Copy lorem ipsum</p>
+        <img class="start-phase__graphic" src="" alt="">
+        <a href="#" class="start-phase__link">
+          Lorem ipsum
+        </a>
+      </div>
+
+      <div id="phase-5" class="start-phase start-phase--red">
+        <h5 class="color--red start-phase__heading">Heading lorem ipsum</h5>
+        <p class="start-phase__copy">Copy lorem ipsum</p>
+        <img class="start-phase__graphic" src="" alt="">
+        <a href="#" class="start-phase__link">
+          Lorem ipsum
+        </a>
+      </div>
+
+      <div id="phase-6" class="start-phase start-phase--green">
+        <h5 class="color--green start-phase__heading">Heading lorem ipsum</h5>
+        <p class="start-phase__copy">Copy lorem ipsum</p>
+        <img class="start-phase__graphic" src="" alt="">
+        <a href="#" class="start-phase__link">
+          Lorem ipsum
+        </a>
+      </div>
+
+      <div id="phase-7" class="start-phase start-phase--yellow">
+        <h5 class="color--yellow start-phase__heading">Heading lorem ipsum</h5>
+        <p class="start-phase__copy">Copy lorem ipsum</p>
+        <img class="start-phase__graphic" src="" alt="">
+        <a href="#" class="start-phase__link">
+          Lorem ipsum
+        </a>
+      </div>
+
+      <div id="phase-8" class="start-phase start-phase--purple">
+        <h5 class="color--purple start-phase__heading">Heading lorem ipsum</h5>
+        <p class="start-phase__copy">Copy lorem ipsum</p>
+        <img class="start-phase__graphic" src="" alt="">
+        <a href="#" class="start-phase__link">
+          Lorem ipsum
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/index.js"></script>
+</body>
+</html>

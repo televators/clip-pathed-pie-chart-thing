@@ -1,0 +1,75 @@
+@use 'sass:math';
+
+// Media Query: min-width
+@mixin min($size) {
+  @if (unitless($size)) {
+    $size: $size * 1px;
+  }
+
+  @media screen and (min-width: #{$size}) {
+    @content;
+  }
+}
+
+// Media Query: max-width
+@mixin max($size) {
+  @if (unitless($size)) {
+    $size: $size * 1px;
+  }
+
+  @media screen and (max-width: #{$size}) {
+    @content;
+  }
+}
+
+// Media Query: min- and max-width in that order
+@mixin minmax($min, $max) {
+  @if (unitless($min)) {
+    $min: $min * 1px;
+  }
+
+  @if (unitless($max)) {
+    $max: $max * 1px;
+  }
+
+  @media screen and (min-width: #{$min}) and (max-width: #{$max}) {
+    @content;
+  }
+}
+
+// PX to EM Default Size and Function
+$base-font-size: 16;
+
+@function em($pixels, $context: $base-font-size) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return math.div($pixels, $context) * 1em;
+}
+
+// PX to REM Function
+@function rem($pixels, $context: $base-font-size) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return math.div($pixels, $context) * 1rem;
+}
+
+// Generate Unitless Line Height
+@function line-height($pixels, $context: $base-font-size) {
+  @return math.div($pixels, $context) * 1;
+}
+
+// Variables
+$white: #fff;
+$black: #000;

@@ -1,0 +1,15 @@
+{
+  "name": "uls-pie-slices",
+  "version": "1.0.0",
+  "description": "Interactive pie/wheel slice thingy.",
+  "main": "js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch scss/index.scss css/index.css"
+  },
+  "author": "Justin Higgs",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.49.9"
+  }
+}

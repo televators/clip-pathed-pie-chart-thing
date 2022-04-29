@@ -44,7 +44,7 @@
     height: 761px;
     border-radius: 300px;
 
-    @include max( 560 ) {
+    @include max( 762 ) {
       width: calc(100vw - 60px);
       height: calc(100vw - 60px);
     }
@@ -61,7 +61,7 @@
     border: 12px solid transparent;
     border-radius: 300px;
 
-    @include max( 560 ) {
+    @include max( 762 ) {
       width: calc((100vw - 60px) * 0.88571);
       height: calc((100vw - 60px) * 0.88571);
     }
@@ -77,6 +77,11 @@
     img {
       position: relative;
       left: rem( -1 );
+    }
+
+    @include max( 762 ) {
+      // NOTE: This is the same ratio as 204px at full size.
+      width: 26.808%;
     }
   }
 
@@ -107,17 +112,17 @@
       width: 240px;
       height: 226px;
 
-      @include max( 560 ) {
-        width: 31.25%;
-        height: 40.323%;
+      @include max( 762 ) {
+        width: 43.56%;
+        height: 40.655%;
       }
     }
 
     &--2, &--5 {
       width: 188px;
-      height: 277px;
+      height: 275px;
 
-      @include max( 560 ) {
+      @include max( 762 ) {
         width: 40.323%;
         height: 31.25%;
       }

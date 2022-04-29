@@ -41,7 +41,7 @@
   height: 761px;
   border-radius: 300px;
 }
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 762px) {
   .wheel__container {
     width: calc(100vw - 60px);
     height: calc(100vw - 60px);
@@ -58,7 +58,7 @@
   border: 12px solid transparent;
   border-radius: 300px;
 }
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 762px) {
   .wheel__slices {
     width: calc((100vw - 60px) * 0.88571);
     height: calc((100vw - 60px) * 0.88571);
@@ -74,6 +74,11 @@
 .wheel__centerpiece img {
   position: relative;
   left: -0.0625rem;
+}
+@media screen and (max-width: 762px) {
+  .wheel__centerpiece {
+    width: 26.808%;
+  }
 }
 .wheel__slice {
   cursor: pointer;
@@ -106,17 +111,17 @@
   width: 240px;
   height: 226px;
 }
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 762px) {
   .wheel__slice--1, .wheel__slice--3, .wheel__slice--4, .wheel__slice--6 {
-    width: 31.25%;
-    height: 40.323%;
+    width: 43.56%;
+    height: 40.655%;
   }
 }
 .wheel__slice--2, .wheel__slice--5 {
   width: 188px;
-  height: 277px;
+  height: 275px;
 }
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 762px) {
   .wheel__slice--2, .wheel__slice--5 {
     width: 40.323%;
     height: 31.25%;

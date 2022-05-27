@@ -73,3 +73,40 @@ $base-font-size: 16;
 // Variables
 $white: #fff;
 $black: #000;
+
+// Wrapper for whole shebang
+.the-pie-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 2rem 0;
+
+  @include max( 899 ) {
+    flex-flow: column nowrap;
+    padding-bottom: 3.25rem;
+  }
+}
+
+.start__wheel-wrapper,
+.start__phases-wrapper {
+  height: auto;
+
+  @include max( 899 ) {
+    width: 100%;
+  }
+}
+
+.start__wheel-wrapper {
+  @include min( 900 ) {
+    width: 60%;
+  }
+}
+
+.start__phases-wrapper {
+  @include min( 900 ) {
+    width: 40%;
+    padding-left: 2.5rem;
+  }
+}

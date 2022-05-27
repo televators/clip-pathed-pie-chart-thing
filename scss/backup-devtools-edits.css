@@ -1,0 +1,25 @@
+
+/* Inline #22 | https://test-newuls.pantheonsite.io/academics/ */
+
+html {
+  /* margin-top: 32px !important; */
+}
+
+/* Inline #26 | https://test-newuls.pantheonsite.io/academics/ */
+
+.start__phases-wrapper {
+  width: 40%;
+  padding-left: 2.5rem;
+}
+
+/* Inline #19 | https://test-newuls.pantheonsite.io/academics/ */
+
+.start-phase__copy {
+  /* font-size: 1.25rem; */
+  font-size: 16px;
+  text-align: center;
+}
+
+.start__wheel-wrapper {
+  width: 60%;
+}

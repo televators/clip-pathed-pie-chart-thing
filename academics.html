@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Pie/Wheel Thing!</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <div class="start__wheel-wrapper">
+    <div class="start__wheel">
+      <div class="wheel__container">
+        <div class="wheel__circle-background" style="background-image: url(/wp-content/themes/uls/images/pie-chart/circle-background.svg);"></div>
+        <div class="wheel__centerpiece">
+          <img src="/wp-content/themes/uls/images/pie-chart/center-understanding.svg" alt="Understanding">
+        </div>
+        <div class="wheel__slices">
+          <div data-content-id="phase-1" class="wheel__slice wheel__slice--1 wheel__slice--green --active" title="">
+            <img src="/wp-content/themes/uls/images/pie-chart/slice-1.svg" alt="">
+            <img src="/wp-content/themes/uls/images/pie-chart/slice-1--active.svg" alt="">
+          </div>
+          <div data-content-id="phase-2" class="wheel__slice wheel__slice--2 wheel__slice--yellow" title="">
+            <img src="/wp-content/themes/uls/images/pie-chart/slice-2.svg" alt="">
+            <img src="/wp-content/themes/uls/images/pie-chart/slice-2--active.svg" alt="">
+          </div>
+          <div data-content-id="phase-3" class="wheel__slice wheel__slice--3 wheel__slice--purple" title="">
+            <img src="/wp-content/themes/uls/images/pie-chart/slice-3.svg" alt="">
+            <img src="/wp-content/themes/uls/images/pie-chart/slice-3--active.svg" alt="">
+          </div>
+          <div data-content-id="phase-4" class="wheel__slice wheel__slice--4 wheel__slice--blue" title="">
+            <img src="/wp-content/themes/uls/images/pie-chart/slice-4.svg" alt="">
+            <img src="/wp-content/themes/uls/images/pie-chart/slice-4--active.svg" alt="">
+          </div>
+          <div data-content-id="phase-5" class="wheel__slice wheel__slice--5 wheel__slice--red" title="">
+            <img src="/wp-content/themes/uls/images/pie-chart/slice-5.svg" alt="">
+            <img src="/wp-content/themes/uls/images/pie-chart/slice-5--active.svg" alt="">
+          </div>
+          <div data-content-id="phase-6" class="wheel__slice wheel__slice--6 wheel__slice--green" title="">
+            <img src="/wp-content/themes/uls/images/pie-chart/slice-6.svg" alt="">
+            <img src="/wp-content/themes/uls/images/pie-chart/slice-6--active.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slices__clip-paths">
+      <svg width="0" height="0">
+        <defs>
+          <clipPath clipPathUnits="objectBoundingBox" id="slice-1-path">
+            <path d="m0,0.773 l0,-0.773 c0.423,0.004,0.785,0.226,1,0.614 l-0.628,0.386 c-0.077,-0.134,-0.214,-0.224,-0.372,-0.227"></path>
+          </clipPath>
+        </defs>
+      </svg>
+      <svg width="0" height="0">
+        <defs>
+          <clipPath clipPathUnits="objectBoundingBox" id="slice-2-path">
+            <path d="m0,0.314 l0.801,-0.314 c0.266,0.319,0.266,0.681,0,1 l-0.8,-0.314 c0.045,-0.055,0.07,-0.118,0.07,-0.186 c0,-0.067,-0.025,-0.131,-0.07,-0.186"></path>
+          </clipPath>
+        </defs>
+      </svg>
+      <svg width="0" height="0">
+        <defs>
+          <clipPath clipPathUnits="objectBoundingBox" id="slice-3-path">
+            <path d="m0.37,0 l0.63,0.386 c-0.215,0.388,-0.577,0.61,-1,0.614 l0,-0.773 c0.157,-0.004,0.294,-0.094,0.37,-0.227"></path>
+          </clipPath>
+        </defs>
+      </svg>
+      <svg width="0" height="0">
+        <defs>
+          <clipPath clipPathUnits="objectBoundingBox" id="slice-4-path">
+            <path d="m0.63,0 c0.076,0.134,0.213,0.224,0.37,0.228 l0,0.772 c-0.423,-0.004,-0.785,-0.226,-1,-0.614 l0.63,-0.386"></path>
+          </clipPath>
+        </defs>
+      </svg>
+      <svg width="0" height="0">
+        <defs>
+          <clipPath clipPathUnits="objectBoundingBox" id="slice-5-path">
+            <path d="m0.199,1 c-0.265,-0.319,-0.265,-0.681,0.001,-1 l0.801,0.314 c-0.044,0.055,-0.07,0.118,-0.07,0.185 c0,0.067,0.025,0.13,0.069,0.185 l-0.801,0.315"></path>
+          </clipPath>
+        </defs>
+      </svg>
+      <svg width="0" height="0">
+        <defs>
+          <clipPath clipPathUnits="objectBoundingBox" id="slice-6-path">
+            <path d="m1,0.772 c-0.157,0.004,-0.294,0.094,-0.37,0.228 l-0.63,-0.387 c0.215,-0.388,0.577,-0.61,1,-0.613 l0,0.772"></path>
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  </div>
+  <div class="start__phases-wrapper">
+    <div class="start-phases">
+
+      <div id="phase-1" class="start-phase start-phase--green --active">
+        <p class="start-phase__copy">Educators provide structure, students make meaning</p>
+      </div>
+
+      <div id="phase-2" class="start-phase start-phase--yellow">
+        <p class="start-phase__copy">Learning takes hold when students care</p>
+      </div>
+
+      <div id="phase-3" class="start-phase start-phase--purple">
+        <p class="start-phase__copy">We endure because we change</p>
+      </div>
+
+      <div id="phase-4" class="start-phase start-phase--blue">
+        <p class="start-phase__copy">New questions are more valuable than old answers</p>
+      </div>
+
+      <div id="phase-5" class="start-phase start-phase--red">
+        <p class="start-phase__copy">We evaluate growth and understanding, not memorization</p>
+      </div>
+
+      <div id="phase-6" class="start-phase start-phase--green">
+        <p class="start-phase__copy">Students derive personal meaning from looking outward</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/index.js"></script>
+</body>
+</html>

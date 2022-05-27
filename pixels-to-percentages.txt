@@ -1,0 +1,29 @@
+Main Size: 761
+----------------------
+Centerpiece: 204
+Ratio: 26.8068%
+----------------------
+.wheel__slices: 575
+Ratio: 75.5585%
+----------------------
+All Slices:
+  - max-width: 241
+  - max-height: 277
+Ratios:
+  - max-width: 31.6689%
+  - max-height: 36.3995%
+----------------------
+Slices 1/3/4/6:
+  - width: 240
+  - height: 226
+Ratios:
+  - width: 31.5375%
+  - height: 29.6978%
+----------------------
+Slices 2/5:
+  - width: 188
+  - height: 275
+Ratios:
+  - width: 37.0079%
+  - height: 54.1339%
+----------------------
